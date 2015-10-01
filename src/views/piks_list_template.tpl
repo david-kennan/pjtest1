@@ -29,7 +29,7 @@
             <img src="/docroot/img/pikjoy-logo.png" style="display: inline;" alt="">
         </div>
         <div class="row share-row">
-            <div class="fb-share-button" data-href="" data-layout="link"></div>
+            <div class="fb-share-button" data-href="" data-layout="button"></div>
         </div>
         <div class="row">
             <div id="gallery">
