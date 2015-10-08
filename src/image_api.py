@@ -32,8 +32,10 @@ def index():
 
 # Error Handlers
 @app.error(500)
-def error_handler_500(error):
-    return str(error)
+@app.error(404)
+@bottle.view("error")
+def error_handler_gen(error):
+    return dict(message=error.message)
 
 
 if __name__ == '__main__':

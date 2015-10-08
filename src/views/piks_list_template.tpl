@@ -7,12 +7,15 @@
     <link rel="stylesheet" type="text/css" href="/docroot/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/docroot/css/theme.css">
     <link rel="stylesheet" type="text/css" href="/docroot/css/blueimp-gallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/docroot/css/blueimp-gallery-indicator.css">
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,400,300,700" rel="stylesheet" type="text/css">
     <link rel="icon" href="/docroot/img/pikjoy-favicon-16.png" sizes="16x16">
     <link rel="icon" href="/docroot/img/pikjoy-favicon-32.png" sizes="32x32">
     <link rel="icon" href="/docroot/img/pikjoy-favicon-48.png" sizes="48x48">
 
-    <meta property="og:title" content="My Pikjoy Album" />
-    <meta property="og:type" content="og:image" />
+    <meta property="og:title" content="Anand's Birthday Bash" />
+    <meta property="og:description" content="One Crazy night!!" />
+    <meta property="og:type" content="og:website" />
     <meta property="fb:app_id" content="1677396915813926" />
     <meta property="og:image" content="{{piks[1] if len(piks) else piks[0]}}" />
 
@@ -29,7 +32,7 @@
             <img src="/docroot/img/pikjoy-logo.png" style="display: inline;" alt="">
         </div>
         <div class="row share-row">
-            <div class="fb-share-button" data-href="" data-layout="button"></div>
+            <div class="fb-share-button" data-layout="button" ></div>
         </div>
         <div class="row">
             <div id="gallery">
@@ -45,9 +48,9 @@
     </div>
     <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" style="display: none;">
         <div class="slides"></div>
-        <a class="next"></a>
-        <a class="prev"></a>
-        <a class="close"></a>
+        <a class="next">›</a>
+        <a class="prev">‹</a>
+        <a class="close">&#9747;</a>
         <ol class="indicator"></ol>
         <a class="share"></a>
     </div>
@@ -86,5 +89,19 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+</script>
+<script>
+  $(".fb-custom-share-button").click( function() {
+    FB.ui(
+    {
+      method: 'feed',
+      name: 'This is the content of the "name" field.',
+      link: "view.pikjoy.com/" + location.pathname,
+      picture: 'http://www.hyperarts.com/external-xfbml/share-image.gif',
+      caption: 'This is the content of the "caption" field.',
+      description: 'This is the content of the "description" field, below the caption.',
+      message: ''
+    });
+  });
 </script>
 </html>
